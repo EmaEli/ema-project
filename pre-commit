@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+
+# This script will be copied in .git/hooks folder by the npm install and it's called by git.
+
+# Halt on error - not in shebang for better Git Bash on Windows compatibility.
+set -e
+
+# Execute the pre-commit tasks
+npm run lint
+npm run test
+
+exit 0
+
