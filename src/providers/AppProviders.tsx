@@ -1,8 +1,9 @@
-import './i18n';
 import { ComponentClass, FC, ReactElement } from 'react';
 import { BrowserRouter } from 'react-router-dom';
-import ErrorBoundary, { ErrorBoundaryProps } from 'ErrorBoundary';
+import '../i18n';
 import AppGenericError from 'library-ui/AppGenericError/AppGenericError';
+import ErrorBoundary, { ErrorBoundaryProps } from 'providers/ErrorBoundary';
+import ToastProvider from 'providers/ToastProvider';
 
 export interface AppProvidersProps {
   children: ReactElement;
@@ -14,6 +15,7 @@ const AppProviders: FC<AppProvidersProps> = ({ children }) => {
   const providers: { provider: unknown, props?: Record<string, any> }[] = [
     { provider: BrowserRouter },
     { provider: ErrorBoundary, props: { fallback: AppGenericError } as ErrorBoundaryProps },
+    { provider: ToastProvider },
   ];
 
   return providers.reduceRight((accumulator, item) => {

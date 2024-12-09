@@ -1,8 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import App from './App';
 import './i18n';
 import './index.css';
+import AppProviders from 'providers/AppProviders';
+import App from 'src/App';
 
 // Ensure the 'root' element exists in the HTML before proceeding
 const rootElement = document.getElementById('root');
@@ -12,5 +13,7 @@ if (!rootElement) {
 }
 
 ReactDOM.createRoot(rootElement).render(<React.StrictMode>
-  <App />
+  <AppProviders>
+    <App />
+  </AppProviders>
 </React.StrictMode>);

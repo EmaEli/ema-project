@@ -1,6 +1,11 @@
 {
   "compilerOptions": {
-    "baseUrl": "src",
+    "baseUrl": ".",
+    "paths": {
+      "src/*": ["src/*"],
+      "providers/*": ["src/providers/*"],
+      "library-ui/*": ["src/library-ui/*"]
+    },
     "target": "es5",
     "lib": [
       "dom",
@@ -22,5 +27,10 @@
     "noEmit": true,
     "jsx": "react-jsx"
   },
-  "include": ["src/**/*.ts", "src/**/*.tsx", "src/types/**/*.d.ts", "src"]
+  "include": [
+    "src/**/*.ts",
+    "src/**/*.tsx",
+    "src/types/**/*.d.ts",
+    "src"
+  ]
 }
