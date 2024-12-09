@@ -1,4 +1,9 @@
 {
   "welcome": "Welcome!",
-  "item_count": "Count: {{count}}"
+  "item_count": "Count: {{count}}",
+  "error": {
+    "title": "Something went wrong",
+    "message": "We encountered an unexpected error. Please try again later.",
+    "reload": "Reload Page"
+  }
 }

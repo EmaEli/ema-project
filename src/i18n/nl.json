@@ -1,4 +1,9 @@
 {
   "welcome": "Welkom!",
-  "item_count": "Graaf {{count}}"
+  "item_count": "Graaf {{count}}",
+  "error": {
+    "title": "Er is iets misgegaan",
+    "message": "We hebben een onverwachte fout gevonden. Probeer het later opnieuw.",
+    "reload": "Pagina herladen"
+  }
 }
