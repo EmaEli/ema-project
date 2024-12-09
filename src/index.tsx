@@ -3,13 +3,13 @@ import ReactDOM from 'react-dom/client';
 import App from './App';
 import './index.css';
 
-// Potremmo definire che rootElement sia di tipo Root ma in questo caso dovremmo avere una funzione di mount e una di unmount
+// Ensure the 'root' element exists in the HTML before proceeding
+const rootElement = document.getElementById('root');
 
-// Usiamo '!' per asserire che getElementById non restituirà null.
-const rootElement = document.getElementById('root')!;
+if (!rootElement) {
+  throw new Error("Root element not found. Ensure that an element with id 'root' exists in index.html.");
+}
 
-const root = ReactDOM.createRoot(rootElement);
-
-root.render(<React.StrictMode>
+ReactDOM.createRoot(rootElement).render(<React.StrictMode>
   <App />
 </React.StrictMode>);
