@@ -1,9 +1,17 @@
 {
   "welcome": "Benvunuti!",
-  "item_count": "Conteggio: {{count}}",
   "error": {
     "title": "Qualcosa è andato storto",
     "message": "Abbiamo riscontrato un errore imprevisto. Per favore, riprova più tardi.",
     "reload": "Ricarica la pagina"
-  }
+  },
+  "language": {
+    "english": "Inglese",
+    "italian": "Italiano",
+    "dutch": "Olandese"
+  },
+  "item_count": "Hai cliccato {{count}} volte",
+  "edit": "Modifica",
+  "and_save": "e salva per testare HMR.",
+  "click_logos": "Clicca sui loghi di Vite e React per saperne di più"
 }

@@ -2,7 +2,7 @@ import { FC, useState } from 'react';
 import reactLogo from 'src/assets/react.svg';
 import viteLogo from 'src/assets/vite.svg';
 import { useTranslation } from 'react-i18next';
-import './App.css';
+import { Button, GlobalStyle, HorizontalFlex, LayoutBackground, LayoutContainer, Space } from './library-ui';
 
 const App: FC = () => {
   const { t, i18n } = useTranslation();
@@ -14,48 +14,56 @@ const App: FC = () => {
   const [count, setCount] = useState(0);
 
   return (
-    <>
-      <button onClick={() => switchLanguage('en')}>English</button>
-      <button onClick={() => switchLanguage('it')}>Italiano</button>
-      <button onClick={() => switchLanguage('nl')}>Dutch</button>
+    <LayoutBackground>
+      <GlobalStyle />
 
-      <div>
-        <a
-          href="https://vitejs.dev"
-          target="_blank"
-          rel="noreferrer"
-        >
-          <img
-            src={viteLogo}
-            className="logo"
-            alt="Vite logo"
-          />
-        </a>
-        <a
-          href="https://react.dev"
-          target="_blank"
-          rel="noreferrer"
-        >
-          <img
-            src={reactLogo}
-            className="logo react"
-            alt="React logo"
-          />
-        </a>
-      </div>
-      <h1>{t('welcome')}</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
+      <LayoutContainer>
+        <HorizontalFlex $gap={Space.V12}>
+          <Button onClick={() => switchLanguage('en')}>{t('language.english')}</Button>
+          <Button onClick={() => switchLanguage('it')}>{t('language.italian')}</Button>
+          <Button onClick={() => switchLanguage('nl')}>{t('language.dutch')}</Button>
+        </HorizontalFlex>
+
+        {/* Logo e titolo */}
+        <div>
+          <a
+            href="https://vitejs.dev"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <img
+              src={viteLogo}
+              className="logo"
+              alt="Vite logo"
+            />
+          </a>
+          <a
+            href="https://react.dev"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <img
+              src={reactLogo}
+              className="logo react"
+              alt="React logo"
+            />
+          </a>
+        </div>
+        <h1>{t('welcome')}</h1>
+
+        <Button onClick={() => setCount((count) => count + 1)}>
           {t('item_count', { count })}
-        </button>
+        </Button>
         <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
+          {t('edit')} <code>src/App.tsx</code> {t('and_save')}
         </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+
+        {/* Footer */}
+        <p className="read-the-docs">
+          {t('read_docs')}
+        </p>
+      </LayoutContainer>
+    </LayoutBackground>
   );
 };
 

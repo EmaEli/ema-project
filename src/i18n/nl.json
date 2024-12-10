@@ -1,9 +1,17 @@
 {
   "welcome": "Welkom!",
-  "item_count": "Graaf {{count}}",
   "error": {
     "title": "Er is iets misgegaan",
     "message": "We hebben een onverwachte fout gevonden. Probeer het later opnieuw.",
     "reload": "Pagina herladen"
-  }
+  },
+  "language": {
+    "english": "Engels",
+    "italian": "Italiaans",
+    "dutch": "Nederlands"
+  },
+  "item_count": "Je hebt {{count}} keer geklikt",
+  "edit": "Bewerk",
+  "and_save": "en sla op om HMR te testen.",
+  "click_logos": "Klik op de Vite- en React-logo's om meer te leren"
 }
